@@ -13,13 +13,13 @@ public class App {
     private static int sum3(int num1, int num2, int num3){
         return num1 + num2 + num3;
     }
-
     /**
      * Modify the methods in such a way that the Class App
      * can now have 2 overloaded computeSum() methods.
      * One computing the sum of two numbers, and one computing the sum
      * of three numbers.
      */
+
     private static int computeSum(int num1, int num2){
         return num1 + num2;
     }
@@ -32,12 +32,18 @@ public class App {
      * Create method that returns the greater integer value
      * @return
      */
+
     private static int greaterValue(int num1, int num2) {
-        if(num1 > num2){
+        if (num1 > num2)
+        {
+            return num1;
         }
-        else if ( num2 > num1){
+
+        else if (num1 < num2)
+        {
+            return num2;
         }
-        return num1 = num2;
+        return greaterValue(45, 100);
     }
     /**
      *
@@ -45,24 +51,36 @@ public class App {
      */
 
     private static double greaterValue(double num1, double num2) {
-        if (num1 > num2)
-        {
-
+        if (num1 > num2) {
+            return num1;
         }
         else if (num1 < num2){
+            return num2;
         }
-        return num1 = num2;
+        return greaterValue(3.14, 9.8);
     }
+
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         /**
          * Create Method calls that takes in 2 parameters, and 3 parameters
          * respectively and computes their sum.
+         * This method used sum2 and sum3 constructor.
          */
-        System.out.println("The sum of 25 and 50 is " + App.sum2(45, 100));
-        System.out.println("The sum of 25 and 50 and 100 is " + App.sum3(25, 45, 100));
+        System.out.println("The sum of 45 and 100 is " + App.sum2(45, 100));
+        System.out.println("The sum of 20 and 25 and 100 is " + App.sum3(20, 25, 100));
 
-        System.out.println("\n==================");
+        System.out.println("\n==================\n");
+        /**
+         * Create Method calls that takes in 2 parameters, and 3 parameters
+         * respectively and computes their sum.
+         * This method used 2 overloaded computeSum()
+         */
+
+        System.out.println("The sum of 45 and 100 is " + App.computeSum(25, 50));
+        System.out.println("The sum of 20 and 25 and 100 is " + App.computeSum(20, 25, 100));
+
+        System.out.println("\n==================\n");
 
         /**
          * Call the greaterValue method with integer parameters
@@ -75,6 +93,5 @@ public class App {
         System.out.println("The greater value between 3.14 and 9.8 is " + greaterValue(3.14,9.8));
 
     }
-
 
 }
